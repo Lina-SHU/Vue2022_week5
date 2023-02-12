@@ -109,6 +109,7 @@ const app = Vue.createApp({
       return phoneNumber.test(value) ? true : "請輸入 09 開頭的 10 位電話號碼";
     },
     onSubmit(values, { resetForm }) {
+      this.isLoading = true;
       const url = `${apiUrl}api/${apiPath}/order`;
       axios
         .post(url, {
@@ -122,6 +123,7 @@ const app = Vue.createApp({
           this.getCart();
           resetForm();
           this.message = '';
+          this.isLoading = false;
         })
         .catch((err) => {
           this.isLoading = false;
