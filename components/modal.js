@@ -43,6 +43,7 @@ export default {
     },
     hideModal() {
       this.detailModal.hide();
+      this.qty = 1;
     },
   },
   mounted() {

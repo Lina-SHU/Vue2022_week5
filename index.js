@@ -50,6 +50,7 @@ const app = Vue.createApp({
       axios
         .post(url, { data: obj })
         .then((res) => {
+          alert("已將商品加入到購物車！");
           this.isLoading = false;
           this.getCart();
           this.$refs.detailModal.hideModal();
